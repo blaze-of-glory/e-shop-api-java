@@ -8,7 +8,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name, surname, position;
+    private String img, name, surname, position;
     private int age, salary;
 
     public Long getId() {
@@ -17,6 +17,14 @@ public class Employee {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getName() {

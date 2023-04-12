@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
@@ -39,6 +39,7 @@ public class EmployeeController {
         Employee employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
 
+        employee.setImg(employeeDetails.getImg());
         employee.setName(employeeDetails.getName());
         employee.setSurname(employeeDetails.getSurname());
         employee.setAge(employeeDetails.getAge());
